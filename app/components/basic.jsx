@@ -15,7 +15,7 @@ class Basic extends React.Component {
   componentDidMount() {
     var self = this;
     store.subscribe(function() {
-      //var name = store.getState().name
+      console.log(store.getState())
       self.setState({name: store.getState().name})
     })
   }
