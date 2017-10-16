@@ -28,10 +28,10 @@ class Hello extends React.Component {
 	render() {
 		return(
 			<div style={style.div}>
-        <p>{this.state.text}</p>
-        <p>{this.props.name}</p>
-        <input onChange={this.props.handleSubmit} />
-      </div>
+		        <p>{this.state.text}</p>
+		        <p>{this.props.name}</p>
+		        <input onChange={this.props.handleSubmit} />
+      		</div>
 		)
 	}
 }

@@ -25,10 +25,10 @@ class Basic extends React.Component {
 		return(
 			<div style={{border: '1px solid blue', padding: '20px', marginBottom: '20px'}}>
 				{/* 样式通过style={{}}的方法定义，里面的对象的属性值要用驼峰的写法 */}
-        <p>{this.state.text}</p>
-        <p>{this.props.name}</p>
-        <input onChange={this.handleSubmit} />
-      </div>
+		        <p>{this.state.text}</p>
+		        <p>{this.props.name}</p>
+        		<input onChange={this.handleSubmit} />
+     		 </div>
 		)
 	}
 }
