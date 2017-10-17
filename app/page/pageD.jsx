@@ -12,6 +12,7 @@ class PageB extends React.Component {
   render() {
     return (
       <div>
+        <p>单JSX文件导出多个组件</p>
         <PublicA/>
         <PublicB/>
       </div>

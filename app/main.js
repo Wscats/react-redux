@@ -13,6 +13,7 @@ import PageA from "./page/pageA.jsx";
 import PageB from "./page/pageB.jsx";
 import PageC from "./page/pageC.jsx";
 import PageD from "./page/pageD.jsx";
+import PageE from "./page/pageE.jsx";
 
 ReactDOM.render((
   <Provider store={store}>
@@ -31,11 +32,15 @@ ReactDOM.render((
           <li>
             <Link to="/paged">PageD</Link>
           </li>
+          <li>
+            <Link to="/pagee">PageE</Link>
+          </li>
         </ul>
         <Route path="/pagea" component={PageA}/>
         <Route path="/pageb" component={PageB}/>
         <Route path="/pagec" component={PageC}/>
         <Route path="/paged" component={PageD}/>
+        <Route path="/pagee" component={PageE}/>
       </div>
     </HashRouter>
   </Provider>
