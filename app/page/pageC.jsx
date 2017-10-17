@@ -7,6 +7,7 @@ class PageB extends React.Component {
     this.state = {
       name: "Oaoafly",
       bool: true,
+      //注意数组里面的html元素是没有双引号的
       htmlArr: [< p > a < /p>, <p>b</p >],
       arr: [
         {
@@ -19,7 +20,8 @@ class PageB extends React.Component {
           name: "Eno",
           skill: "JS"
         }
-      ]
+      ],
+      html: "<p>这是一段<span style='color:red'>HTML</span></p>"
     };
     this.Ok = this.Ok.bind(this);
     this.ed = this.ed.bind(this);
@@ -78,7 +80,7 @@ class PageB extends React.Component {
 
         <p style={{
           color: 'red'
-        }}>3.布尔值</p>
+        }}>3.布尔值 v-if</p>
 
         <p>{!this.state.bool
             ? "真"
@@ -87,7 +89,6 @@ class PageB extends React.Component {
           color: 'red'
         }}>4.数组</p>
         {this.state.htmlArr}
-
         <p style={{
           color: 'red'
         }}>5.渲染列表</p>
@@ -113,6 +114,22 @@ class PageB extends React.Component {
             }
           })}
         </ul>
+        <p style={{
+          color: 'red'
+        }}>6.标签渲染
+        </p>
+        {/*注意输出的<p>标签是没有双引号*/}
+        <div>{< p > {
+            this.state.name
+          } < /p>}</div>
+        <p style={{
+          color: 'red'
+        }}>利用dangerouslySetInnerHTML方法
+        </p>
+        {/*React默认会进行HTML的转义，避免XSS攻击，如果要不转义，可以这么写，可以把富文本this.state.html渲染到页面上*/}
+        <div dangerouslySetInnerHTML={{
+          __html: this.state.html
+        }}></div>
       </div>
     )
   }
