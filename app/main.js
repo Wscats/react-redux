@@ -12,6 +12,7 @@ import {Route, Link, Redirect, HashRouter} from 'react-router-dom';
 import PageA from "./page/pageA.jsx";
 import PageB from "./page/pageB.jsx";
 import PageC from "./page/pageC.jsx";
+import PageD from "./page/pageD.jsx";
 
 ReactDOM.render((
   <Provider store={store}>
@@ -27,10 +28,14 @@ ReactDOM.render((
           <li>
             <Link to="/pagec">PageC</Link>
           </li>
+          <li>
+            <Link to="/paged">PageD</Link>
+          </li>
         </ul>
         <Route path="/pagea" component={PageA}/>
         <Route path="/pageb" component={PageB}/>
         <Route path="/pagec" component={PageC}/>
+        <Route path="/paged" component={PageD}/>
       </div>
     </HashRouter>
   </Provider>
