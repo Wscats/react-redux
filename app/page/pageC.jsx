@@ -8,7 +8,8 @@ class PageB extends React.Component {
       name: "Oaoafly",
       bool: true,
       //注意数组里面的html元素是没有双引号的
-      htmlArr: [< p > a < /p>, <p>b</p >],
+      //还有注意渲染数组里面的html结构，必须要有主键key，不然会有警告
+      htmlArr: [< p key = "1" > a < /p>, <h1 key = "2">b</h1 >],
       arr: [
         {
           name: "Oaoafly",
@@ -104,13 +105,13 @@ class PageB extends React.Component {
           })(this)}
         </ul>
         <ul>
-          {this.state.arr.map(function(item) {
+          {this.state.arr.map(function(item, i) {
             {/*可以在里面出现if的条件*/
             }
             if (item.skill == 'PS') {
               return
             } else {
-              return <li>{item.name}</li>
+              return <li key={i}>{item.name}</li>
             }
           })}
         </ul>
@@ -126,6 +127,9 @@ class PageB extends React.Component {
           color: 'red'
         }}>利用dangerouslySetInnerHTML方法
         </p>
+        <div>{this.state.bool
+            ? <h1>真</h1>
+            : <h1>假</h1>}</div>
         {/*React默认会进行HTML的转义，避免XSS攻击，如果要不转义，可以这么写，可以把富文本this.state.html渲染到页面上*/}
         <div dangerouslySetInnerHTML={{
           __html: this.state.html
