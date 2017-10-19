@@ -3,15 +3,17 @@ class PageE extends React.Component {
   // 构造函数，在创建组件的时候调用一次
   constructor(props) {
     super(props);
-    console.log("--------------Initial render----------------");
+    console.log("--------------initialrender----------------");
     console.log("--------------constructor----------------");
     this.state = {
       name: "生命周期"
     }
+
     this.getInputValue = (event) => {
       this.setState({name: event.target.value})
     }
   }
+
   // 创建组件的时候调用一次，这里不能用ref，因为还没挂载
   // 如果在这个函数里面调用setState，本次的render函数可以看到更新后的state，并且只渲染一次
   componentWillMount() {
@@ -21,6 +23,7 @@ class PageE extends React.Component {
   }
   //在组件挂载之后调用一次。这个时候，子主键也都挂载好了，可以在这里使用refs
   componentDidMount() {
+    console.log(this)
     console.log("--------------componentDidMount----------------")
     console.log(this.refs)
     console.log(this.state)
@@ -67,5 +70,9 @@ class PageE extends React.Component {
       </div>
     )
   }
+}
+// 默认设置默认的props
+PageE.defaultProps = {
+  name: 'ABCDEFG'
 }
 export default PageE
