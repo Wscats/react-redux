@@ -23,9 +23,26 @@
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "test": "jest --coverage",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "lint:check": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "wscats (https://github.com/wscats)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wscats/react-redux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wscats/react-redux/issues"
+  },
+  "homepage": "https://github.com/wscats/react-redux#readme"
 }
