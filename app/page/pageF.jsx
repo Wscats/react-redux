@@ -1,47 +1,33 @@
-import React from "react";
-import {Route, Link} from 'react-router-dom'
-const Abc = ({match}) => (
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
+
+/** Sub-route component displaying the topic ID from URL params. */
+const TopicDetail = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
   </div>
-)
-const Cdf = ({match}) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-)
-class PageE extends React.Component {
-  // 构造函数，在创建组件的时候调用一次
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "路由嵌套"
-    }
-  }
-  componentDidMount() {
-    console.log(this)
-  }
+);
+
+/** Page F - demonstrates nested routing with React Router. */
+class PageF extends React.Component {
   render() {
     return (
       <div>
-        <p ref="p">{this.state.name}</p>
+        <p>Nested Routes</p>
         <ul>
-          <li>
-            <Link to="/pagef/a/a">子路由A</Link>
-          </li>
-          <li>
-            <Link to="/pagef/b/b">子路由B</Link>
-          </li>
+          <li><Link to="/pagef/a/a">Sub-route A</Link></li>
+          <li><Link to="/pagef/b/b">Sub-route B</Link></li>
         </ul>
-        {/*可以通过:xx来接受路由参数，并在组件中用params获取*/}
-        <Route path="/pagef/a/:topicId" component={Abc}/>
-        <Route path="/pagef/b/:topicId" component={Cdf}/>
+        {/* Route params are accessible via match.params */}
+        <Route path="/pagef/a/:topicId" component={TopicDetail} />
+        <Route path="/pagef/b/:topicId" component={TopicDetail} />
       </div>
-    )
+    );
   }
 }
-// 默认设置默认的props
-PageE.defaultProps = {
-  name: 'ABCDEFG'
-}
-export default PageE
+
+PageF.defaultProps = {
+  name: 'ABCDEFG',
+};
+
+export default PageF;

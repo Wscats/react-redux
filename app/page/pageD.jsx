@@ -1,22 +1,17 @@
 import React from 'react';
-import {PublicA, PublicB} from "../components/public.jsx";
-class PageB extends React.Component {
-  constructor(props) {
-    super(props);
-    // 设置 initial state
-    this.state = {};
+import { PublicA, PublicB } from '../components/public.jsx';
 
-  }
-  componentDidMount() {}
-
+/** Page D - demonstrates exporting multiple components from a single JSX file. */
+class PageD extends React.Component {
   render() {
     return (
       <div>
-        <p>单JSX文件导出多个组件</p>
-        <PublicA/>
-        <PublicB/>
+        <p>Multiple components from a single JSX file</p>
+        <PublicA />
+        <PublicB />
       </div>
-    )
+    );
   }
 }
-export default PageB;
+
+export default PageD;
